@@ -29,7 +29,7 @@ export default defineConfig({
   reporter: [
       ['html', { 
           open: 'never',        // no abre el browser automáticamente
-          outputFolder: 'reports/html'  // carpeta donde se guarda
+          outputFolder: 'playwright-report/html'  // carpeta donde se guarda
       }]
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
