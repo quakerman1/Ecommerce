@@ -17,6 +17,13 @@ jobs:
         run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
+      - name: Check secrets
+        run: |
+          echo "Email length: ${#USER_EMAIL}"
+          echo "Password length: ${#PASSWORD}"
+        env:
+          USER_EMAIL: ${{ secrets.USER_EMAIL }}
+          PASSWORD: ${{ secrets.USER_PASSWORD }}
       - name: Run Playwright tests
         env:
           USER_EMAIL: ${{ secrets.USER_EMAIL }}
