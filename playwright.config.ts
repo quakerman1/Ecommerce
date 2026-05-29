@@ -1,6 +1,5 @@
 import dotenv from 'dotenv';
-dotenv.config({ path: '.env' });
-if (process.env.CI !== 'true') {
+if (!process.env.CI) {
     dotenv.config();
 }
 import { defineConfig, devices } from '@playwright/test';
