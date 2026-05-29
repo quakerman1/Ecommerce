@@ -9,6 +9,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('successful login', async ({ page }) => {
+    test.skip(!!process.env.CI, 'Skipped in CI due to security verification');
     await loginPage.login(process.env.USER_EMAIL!, process.env.USER_PASSWORD!);
     await loginPage.navMenu.waitFor({ state: 'visible' });
     await expect(loginPage.navMenu).toBeVisible();
